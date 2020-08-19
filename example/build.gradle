@@ -1,5 +1,4 @@
 plugins {
   id "java"
-  id "io.freefair.jsass-java" version "5.1.1"
-  id "demo.plugin.greeting"
+  id "demo.plugin.jsass"
 }

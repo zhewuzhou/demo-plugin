@@ -9,9 +9,7 @@
 plugins {
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     id 'java-gradle-plugin'
-
-    // Apply the Groovy plugin to add support for Groovy
-    id 'groovy'
+    id 'java'
 }
 
 repositories {
@@ -29,8 +27,8 @@ gradlePlugin {
     // Define the plugin
     plugins {
         greeting {
-            id = 'demo.plugin.greeting'
-            implementationClass = 'demo.plugin.DemoPluginPlugin'
+            id = 'demo.plugin.jsass'
+            implementationClass = 'demo.plugin.DemoPlugin'
         }
     }
 }
@@ -59,5 +57,9 @@ dependencies {
     api "io.bit3:jsass:5.10.3"
     implementation "com.squareup.okio:okio:2.7.0"
     implementation 'com.google.code.gson:gson:2.8.6'
-    //testImplementation project(":test-common")
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 }
